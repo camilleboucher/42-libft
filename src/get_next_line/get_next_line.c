@@ -13,7 +13,7 @@
 #include "get_next_line.h"
 
 static int		fill_stash(char **stash, char *buf);
-static char	*extract_line(char **stash);
+static char		*extract_line(char **stash);
 static ssize_t	read_and_set_buf(char **buf, int fd);
 
 char	*get_next_line(int fd)
