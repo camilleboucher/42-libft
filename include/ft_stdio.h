@@ -6,7 +6,7 @@
 /*   By: Camille <private_mail>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:14:22 by Camille           #+#    #+#             */
-/*   Updated: 2025/12/14 09:53:16 by Camille          ###   ########.fr       */
+/*   Updated: 2025/12/22 15:47:01 by Camille          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STDIO_H
 
 # include <unistd.h>
+# include "ft_printf.h"
 
 int		ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(char *s, int fd);
