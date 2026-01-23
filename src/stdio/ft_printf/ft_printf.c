@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_stdio.h"
 
 static void	init_params(int (**print_param)(va_list, int), int *count)
 {
@@ -57,6 +57,35 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 			count += ft_putchar_fd(*format, 1);
+		format++;
+	}
+	va_end(args);
+	return (count);
+}
+
+int	ft_dprintf(int fd, const char *format, ...)
+{
+	va_list	args;
+	int		(*print_param[127])(va_list, int);
+	int		count;
+
+	if (!format)
+		return (-1);
+	init_params(print_param, &count);
+	va_start(args, format);
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			if (print_param[(unsigned char)*(format + 1)])
+				count += print_param[(unsigned char)*(format + 1)](args, 1);
+			else
+				count += ft_putchar_fd('%', fd);
+			if (!*(++format))
+				break ;
+		}
+		else
+			count += ft_putchar_fd(*format, fd);
 		format++;
 	}
 	va_end(args);

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_stdio.h"
 
 int	print_pointer(va_list args, int fd)
 {
