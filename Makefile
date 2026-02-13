@@ -14,7 +14,7 @@ NAME := libft.a
 
 CC := cc
 CFLAGS := -Wall -Werror -Wextra -Iinclude
-ifeq ($(DEBUG),1)
+ifeq ($(DEBUG),true)
     CFLAGS += -g
 endif
 AR := ar
