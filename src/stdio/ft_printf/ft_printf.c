@@ -78,7 +78,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 		if (*format == '%')
 		{
 			if (print_param[(unsigned char)*(format + 1)])
-				count += print_param[(unsigned char)*(format + 1)](args, 1);
+				count += print_param[(unsigned char)*(format + 1)](args, fd);
 			else
 				count += ft_putchar_fd('%', fd);
 			if (!*(++format))
